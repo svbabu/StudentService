@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import com.example.student.web.service.LoginService;
 
 @Controller
+//change
 @SessionAttributes("name")
 public class LoginController {
 	
