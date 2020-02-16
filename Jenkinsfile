@@ -1,20 +1,24 @@
-pipeline
-{
+pipeline {
     agent any
-    
-        tools{
-            java 'Java-1.8'
-            maven 'Maven-3.5.3'
+    tools { 
+        maven 'Maven 3.3.9' 
+        jdk 'jdk8' 
+    }
+    stages {
+        stage ('Initialize') {
+            steps {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                ''' 
+            }
         }
-        stages{
-            stage('clone source'){
-                  
-                  steps{
-                      git url:'ttps://github.com/svbabu/StudentService.git'
-                  }
-                  
-                  }
-                  }
-                  }
-                  
+
+        stage ('Build') {
+            steps {
+                echo 'This is a minimal pipeline.'
+            }
+        }
+    }
+}
                      
