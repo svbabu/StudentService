@@ -1,11 +1,20 @@
-
-pipeline {
-    agent { docker 'maven:3-alpine' } 
-    stages {
-        stage('Example Build') {
-            steps {
-                sh 'mvn -B clean verify'
-            }
+pipeline
+{
+    agent any
+    
+        tools{
+            java "Java-1.8"
+            maven"Maven-3.5.3"
         }
-    }
-}
+        stages{
+            stage("clone source'){
+                  
+                  steps{
+                      git url:'ttps://github.com/svbabu/StudentService.git'
+                  }
+                  
+                  }
+                  }
+                  }
+                  
+                     
