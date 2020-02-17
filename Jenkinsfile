@@ -1,24 +1,14 @@
 pipeline {
-    agent any
-    tools { 
-        maven 'Maven 3.3.9' 
-        jdk 'jdk8' 
+  agent any
+ 
+  tools {nodejs "node"}
+ 
+  stages {
+    stage('Example') {
+      steps {
+        sh 'npm config ls'
+      }
     }
-    stages {
-        stage ('Initialize') {
-            steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                ''' 
-            }
-        }
-
-        stage ('Build') {
-            steps {
-                echo 'This is a minimal pipeline.'
-            }
-        }
-    }
+  }
 }
                      
