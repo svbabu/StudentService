@@ -7,7 +7,8 @@ pipeline {
         
     stage('Cloning Git') {
       steps {
-        git 'https://github.com/svbabu/StudentService.git'
+        //git 'https://github.com/svbabu/StudentService.git'
+        sh'mvn clean install'
       }
     }
         
